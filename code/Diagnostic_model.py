@@ -17,25 +17,14 @@ from numpy import interp
 from sklearn.metrics import roc_auc_score, confusion_matrix
 
 
-def auc_plot(AUC):
-    auc=AUC['AUC'].values.tolist()
-    x=np.arange(1,len(auc)+1)
-    y=auc
-    plt.figure(figsize=(21,7))
-    plt.plot(x,y,marker='o')
-    plt.xticks(x,x)
-    plt.xlabel('number of variables')
-    plt.ylabel('AUC')
-    plt.savefig('../PIC/AUC_trajectory.pdf',dpi=150,format='pdf',bbox_inches='tight')
-    plt.show()
 
-def get_best_params(data,sglist,lp=['AD','NC']):
+def get_best_params(data,lp=['AD','NC']):
     #the best value of C was determined using cross validation with GridSearchCV in discovery cohort
     data=data[data['label'].isin(lp)]
     label=data['label'].values.tolist()
     y_label = [0 if x == 'NC' else 1 for x in label]
     y = y_label   
-    X=data.loc[:,sglist]
+    X=data.drop(['Subject','label'],axis=1)
     X=np.array(X)
     cv = StratifiedKFold(n_splits=5)
     classifier = LogisticRegression(max_iter=1000000) 
@@ -88,17 +77,17 @@ def get_95CI(y_test,y_pred,y_pred_proba):
     
     return auc_ci
     
-def cls_SP(data_train,data_test,glist,C,lp=['AD','NC']):
+def cls_SP(data_train,data_test,C,lp=['AD','NC']):
     
     data_train=data_train[data_train['label'].isin(lp)]
     label_train=data_train['label'].values.tolist()
     y_train = [0 if x == 'NC' else 1 for x in label_train]
-    X_train=np.array(data_train.loc[:,glist])
+    X_train=np.array(data_train.drop(['Subject','label'],axis=1))
     
     data_test=data_test[data_test['label'].isin(lp)]
     label_test=data_test['label'].values.tolist()
     y_test = [0 if x == 'NC' else 1 for x in label_test]
-    X_test=np.array(data_test.loc[:,glist])
+    X_test=np.array(data_test.drop(['Subject','label'],axis=1))
     
         
     Elr=LogisticRegression(C=C,max_iter=1000000)
@@ -175,22 +164,17 @@ def cls_SP(data_train,data_test,glist,C,lp=['AD','NC']):
 
 
 
-def main(D1,D2,flist,lp=['AD','NC']):
+def main(D1,D2,lp=['AD','NC']):
     
-    C=get_best_params(D1,flist,lp=lp)
-    print("the trained C is:",C) 
-    cls_SP(D1,D2,flist,C,lp=['AD','NC'])     
+    C=get_best_params(D1,lp=lp)
+    print("the trained param C is:",C) 
+    cls_SP(D1,D2,C,lp=['AD','NC'])     
 
 if __name__=='__main__':
     
-    Finfo_ad=pd.read_csv('../data/Finfo_ad.csv',index_col=0)
-    auc_plot(Finfo_ad)
-    flist_ad=Finfo_ad['flist'].values.tolist()
-    auc_ad=Finfo_ad['AUC'].values.tolist()
-    fmax=auc_ad.index(max(auc_ad))
-    features=['Age','Gender','Edu_yrs','BMI']+flist_ad[:fmax+1]
+
     
     discoveryAD=pd.read_csv('../data/discovery_AD_data.csv')
     replicationAD=pd.read_csv('../data/replication_AD_data.csv')
     
-    main(discoveryAD,replicationAD,flist=features,lp=['AD','NC'])
+    main(discoveryAD,replicationAD,lp=['AD','NC'])
