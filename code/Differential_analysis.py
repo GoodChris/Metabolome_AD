@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore")
 
 
 
-def Hsv_plot(FCP,title):
+def HV_plot(FCP,title):
     FC=FCP.loc[:,['FC']]
     Pvalue=FCP.loc[:,['FDR']]
     result=pd.DataFrame()
@@ -130,8 +130,8 @@ if __name__=='__main__':
     FCP_ad=pd.read_csv('../data/FCP_ad.csv')
     FCP_mci=pd.read_csv('../data/FCP_mci.csv')
     
-    Hsv_plot(FCP_ad,title='AD vs NC')
-    Hsv_plot(FCP_mci,title='MCI vs NC')
+    HV_plot(FCP_ad,title='AD vs NC')
+    HV_plot(FCP_mci,title='MCI vs NC')
     Ven(FCP_ad,FCP_mci)
     
     adinfo=pd.read_csv('../data/FCP_ad_info.csv')
