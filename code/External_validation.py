@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Dec 30 15:20:49 2024
-
-@author: Shawhii
+@author: Xiaohui Luo
 """
 import pandas as pd
 import numpy as np
