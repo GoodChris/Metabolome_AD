@@ -134,10 +134,10 @@ if __name__=='__main__':
     HV_plot(FCP_mci,title='MCI vs NC')
     Ven(FCP_ad,FCP_mci)
     
-    adinfo=pd.read_csv('../data/FCP_ad_info.csv')
-    mciinfo=pd.read_csv('../data/FCP_mci_info.csv')
-    discoveryAD=pd.read_csv('../data/discovery_AD_data.csv')
-    discoveryMCI=pd.read_csv('../data/discovery_MCI_data.csv')
+    #adinfo=pd.read_csv('../data/FCP_ad_info.csv')
+    #mciinfo=pd.read_csv('../data/FCP_mci_info.csv')
+    #discoveryAD=pd.read_csv('../data/discovery_AD.csv')
+    #discoveryMCI=pd.read_csv('../data/discovery_MCI.csv')
     
-    Clustermap(data=discoveryAD,info=adinfo,lp=['AD','NC'])
-    Clustermap(data=discoveryMCI,info=mciinfo,lp=['MCI','NC'])
+    #Clustermap(data=discoveryAD,info=adinfo,lp=['AD','NC'])
+    #Clustermap(data=discoveryMCI,info=mciinfo,lp=['MCI','NC'])
