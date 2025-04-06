@@ -1,0 +1,48 @@
+node1,node2,coef,pval
+PE(P-18:1_18:2),PC(O-16:0_22:0),-0.0637,0.0384
+PE(P-18:1_18:2),Mandelic Acid,0.0591,0.0349
+PE(P-18:1_18:2),TG(18:2_18:2_22:6),0.0699,0.0186
+Trigonelline,Dikegulac,0.0583,0.0329
+Trigonelline,Cer(d18:0/22:0),-0.0668,0.0278
+Trigonelline,TG(19:1_18:2_18:2),0.0688,0.0174
+Trigonelline,"N1,N8-diacetylspermidine",-0.0993,0.0131
+Dikegulac,TG(19:1_18:2_18:2),0.0727,0.0921
+Dikegulac,PC(O-16:0_22:0),0.073,0.00946
+Dikegulac,TG(18:2_18:2_22:6),0.0491,0.081
+Dikegulac,Phenylacetyl-L-Glutamine,-0.161,0.00183
+Dikegulac,7-Oxateasterone,0.192,1.99e-09
+Dikegulac,L-Cystine,-0.0634,0.0399
+Cyclo(Pro-Leu),TG(15:0_18:2_18:3),0.53,3.05e-09
+Cyclo(Pro-Leu),"N1,N8-diacetylspermidine",0.117,0.00345
+Cyclo(Pro-Leu),Thr-Gln,0.15,3.46e-06
+Cer(d18:0/22:0),PC(O-18:0_18:2),-0.0773,0.045
+Cer(d18:0/22:0),DHA ethyl ester,1.0,4.53e-57
+TG(19:1_18:2_18:2),PC(O-18:0_18:2),0.102,0.0151
+TG(19:1_18:2_18:2),PE(P-18:0_20:4),0.0703,0.0242
+TG(15:0_18:2_18:3),Mandelic Acid,-0.076,0.0105
+TG(15:0_18:2_18:3),7-Oxateasterone,0.428,1.45e-13
+TG(15:0_18:2_18:3),Thr-Gln,0.147,2.35e-05
+PC(O-18:0_18:2),Mandelic Acid,-0.0836,0.00947
+PC(O-18:0_18:2),1-Methylxanthine,0.108,0.00183
+PC(O-18:0_18:2),7-Oxateasterone,-0.0784,0.0547
+PC(O-18:0_18:2),Thr-Gln,0.0569,0.0774
+PC(O-16:0_22:0),TG(18:2_20:4_20:4),0.35,3.2e-10
+PC(O-16:0_22:0),L-Cystine,-0.0514,0.0816
+Mandelic Acid,"N1,N8-diacetylspermidine",-0.164,0.0738
+Mandelic Acid,Phenylacetyl-L-Glutamine,-0.0564,0.0616
+Mandelic Acid,L-Cystine,-0.06,0.0437
+TG(18:2_18:2_22:6),1-Methylxanthine,0.13,0.000313
+TG(18:2_20:4_20:4),1-Methylxanthine,0.056,0.0657
+TG(18:2_20:4_20:4),DHA ethyl ester,0.281,1.18e-06
+TG(16:1_16:1_22:6),"N1,N8-diacetylspermidine",0.0477,0.0686
+TG(16:1_16:1_22:6),TG(16:0_18:0_20:4),0.209,1.09e-08
+TG(16:1_16:1_22:6),L-Cystine,0.0456,0.0959
+"N1,N8-diacetylspermidine",DHA ethyl ester,-0.088,0.0571
+"N1,N8-diacetylspermidine",Thr-Gln,0.158,0.0661
+"N1,N8-diacetylspermidine",TG(16:0_18:0_20:4),0.212,0.00203
+1-Methylxanthine,7-Oxateasterone,0.439,1.73e-14
+1-Methylxanthine,TG(16:0_18:0_20:4),1.0,7.74e-48
+Phenylacetyl-L-Glutamine,Thr-Gln,0.0562,0.0448
+PE(P-18:0_20:4),7-Oxateasterone,0.103,0.008
+PE(P-18:0_20:4),TG(16:0_18:0_20:4),0.209,4.65e-07
+7-Oxateasterone,TG(16:0_18:0_20:4),-0.109,0.00992
