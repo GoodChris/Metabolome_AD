@@ -26,7 +26,7 @@ def get_best_params(data,lp=['AD','NC']):
     y = y_label   
     X=data.drop(['Subject','label'],axis=1)
     X=np.array(X)
-    cv = StratifiedKFold(n_splits=5)
+    cv = StratifiedKFold(n_splits=10)
     classifier = LogisticRegression(max_iter=1000000) 
     param_grid={'C':np.linspace(1.5,2.5,11)}
     GS = GridSearchCV(classifier, param_grid, cv=cv, scoring='roc_auc')
@@ -178,3 +178,4 @@ if __name__=='__main__':
     replicationAD=pd.read_csv('../data/replication_AD_data.csv')
     
     main(discoveryAD,replicationAD,lp=['AD','NC'])
+
